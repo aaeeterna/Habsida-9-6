@@ -8,111 +8,97 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link
+     rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+     />
   </head>
-  <body> 
-
+  <body>
     <header>
-
       <div class="containerLeft">
-        <img src="img/burger.png" alt="burger">
+        <img src="img/burger.png" alt="burger" />
       </div>
 
       <div class="containerLeft2">
-        <img src="img/logo.png" alt="logo">
+        <img src="img/logo.png" alt="logo" />
       </div>
 
       <div class="containerRight">
-        <img src="img/call.png" alt="call">
-        <img src="img/chat.png" alt="chat">
-        <img src="img/profile.png" alt="profile">
+        <img src="img/call.png" alt="call" />
+        <img src="img/chat.png" alt="chat" />
+        <img src="img/profile.png" alt="profile" />
       </div>
 
       <div class="containerRight2">
-        <img src="img/repair.png" alt="repair">
-        <img src="img/search.png" alt="search">
+        <img src="img/repair.png" alt="repair" />
+        <img src="img/search.png" alt="search" />
       </div>
-
     </header>
 
     <main>
-
       <div class="service">
-
-        <p class="serviceText">Услуги и Сервисы</p>
+        <span class="serviceText">Услуги и Сервисы</span>
 
         <div class="serviceItem">
+          <div class="serviceItem1">
+            <p>Оставить заявку</p>
 
-        <div class="serviceItem1">
+            <img src="img/repair.png" alt="repair" />
+          </div>
 
-          <p>Оставить заявку</p>
+          <div class="serviceItem1">
+            <p>Статус ремонта</p>
 
-          <img src="img/repair.png" alt="repair">
-
+            <img src="img/search.png" alt="search" />
+          </div>
         </div>
-
-        <div class="serviceItem1">
-
-          <p>Статус ремонта</p>
-
-          <img src="img/search.png" alt="search">
-
-        </div>
-        </div>
-
       </div>
 
       <nav class="nav">
-
         <div class="navText">
           <p>Ремонтируемые бренды</p>
         </div>
 
-        <div class="navText">
-          Дополнительные услуги
-        </div>
+        <div class="navText"> Дополнительные услуги </div>
 
-        <div class="navText">
-          Цены и услуги
-        </div>
+        <div class="navText"> Цены и услуги </div>
 
-        <div class="navText">
-          Адресы Сервисных центров
-        </div>
+        <div class="navText"> Адресы Сервисных центров </div>
 
-        <div class="navText">
-          Специальные цены
-        </div>
-
+        <div class="navText"> Специальные цены </div>
       </nav>
 
       <div class="info">
-        
         <div class="infoText">
+          <p
+            >Мы являемся авторизованным сервисным центром по ремонту техники
+            Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
+            официальной гарантией производителя.</p
+          >
 
-          <p>Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
+          <p
+            >Мы успешно работаем с 1992 года и заслужили репутацию надежного
+            партнера.</p
+          >
 
-          <p>Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера.</p>
-
-          <p class="moreText">что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.</p>
+          <p class="moreText"
+            >что подтверждает большое количество постоянных клиентов. Мы
+            гордимся тем, что к нам обращаются по рекомендациям и, в свою
+            очередь, советуют нас родным и близким.</p
+          >
 
           <button class="readMore">
-            <img src="img/expand.png" alt="expand">
+            <img src="img/expand.png" alt="expand" />
             Читать дальше
           </button>
-
         </div>
-        
+
         <div class="infoBanner">
-
-          <img src="img/banner.png" alt="banner">
-
+          <img src="img/banner.png" alt="banner" />
         </div>
-
       </div>
 
-    </div>
-
-    <p class="brandText">
+      <p class="brandText"> 
       РЕМОНТ ТЕХНИКИ РАЗЛИЧНЫХ БРЕНДОВ
     </p>
 
@@ -257,146 +243,207 @@
       <span class="repairButtonText">Показать все</span>
     </button>
 
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="logoContainer">
+              <img src="img/lenovo.png" alt="lenovo" />
+              <a href=""><img src="img/go.png" alt="go" /></a>
+            </div>
+          </div>
 
-    <span class="priceText">
-      ЦЕНЫ НА УСЛУГИ
-    </span>
+          <div class="swiper-slide">
+            <div class="logoContainer">
+              <img src="img/samsung.png" alt="samsung" />
+              <a href=""><img src="img/go.png" alt="go" /></a>
+            </div>
+          </div>
 
-    <div class="priceContainer">
+          <div class="swiper-slide">
+            <div class="logoContainer">
+              <img src="img/apple.png" alt="apple" />
+              <a href=""><img src="img/go.png" alt="go" /></a>
+            </div>
+          </div>
 
-      <div class="priceItem priceHeader">
+          <div class="swiper-slide">
+            <div class="logoContainer">
+              <img src="img/vievsonic.png" alt="viewsonic" />
+              <a href=""><img src="img/go.png" alt="go" /></a>
+            </div>
+          </div>
 
-        <span>
-          Ремонтные услуги
-        </span>
+          <div class="swiper-slide">
+            <div class="logoContainer">
+              <img src="img/bosch.png" alt="bosch" />
+              <a href=""><img src="img/go.png" alt="go" /></a>
+            </div>
+          </div>
 
-        <span>
-          Цена
-        </span>
+          <div class="swiper-slide">
+            <div class="logoContainer">
+              <img src="img/hp.png" alt="hp" />
+              <a href=""><img src="img/go.png" alt="go" /></a>
+            </div>
+          </div>
 
-        <span>
-          Срок
-        </span>
+          <div class="swiper-slide">
+            <div class="logoContainer">
+              <img src="img/acer.png" alt="acer" />
+              <a href=""><img src="img/go.png" alt="go" /></a>
+            </div>
+          </div>
 
-        <a href="">
-          <img src="" alt="">
-        </a>
+          <div class="swiper-slide">
+            <div class="logoContainer">
+              <img src="img/sony.png" alt="sony" />
+              <a href=""><img src="img/go.png" alt="go" /></a>
+            </div>
+          </div>
 
-      </div>
+        </div>
 
-      <div class="priceItem">
-        
-        <span>
-          Диагностика
-        </span>
-
-        <span>
-          Бесплатно
-        </span>
-
-        <span>
-          30 мин
-        </span>
-
-        <a href="">
-          <img src="img/order.png" alt="order">
-        </a>
-
-      </div>
-      <div class="priceItem">
-        
-        <span>
-          Замена дисплея
-        </span>
-
-        <span>
-          1 000 ₽
-        </span>
-
-        <span>
-          30-120 мин
-        </span>
-
-        <a href="">
-          <img src="img/order.png" alt="order">
-        </a>
-
-      </div>
-      <div class="priceItem">
-        
-        <span>
-          Замена полифонического динамика
-        </span>
-
-        <span>
-          1 000 ₽
-        </span>
-
-        <span>
-          30-120 мин
-        </span>
-
-        <a href="">
-          <img src="img/order.png" alt="order">
-        </a>
-
-      </div>
-      <div class="priceItem">
-        
-        <span>
-        Тестирование с выдачей технического заключения
-        </span>
-
-        <span>
-          1 000 ₽
-        </span>
-
-        <span>
-          30-120 мин
-        </span>
-
-        <a href="">
-          <img src="img/order.png" alt="order">
-        </a>
-
-      </div>
-      <div class="priceItem">
-        
-        <span>
-          Замена программного обеспечения
-        </span>
-
-        <span>
-          1 000 ₽
-        </span>
-
-        <span>
-          30-120 мин
-        </span>
-
-        <a href="">
-          <img src="img/order.png" alt="order">
-        </a>
+        <div class="swiper-pagination"></div>
 
       </div>
 
-    </div>
+      <div class="swiper repairSwiper">
+        <div class="swiper-wrapper">
 
+          <div class="swiper-slide">
+            <div class="repairItem">
+              <span>Ремонт ноутбуков</span>
+              <img src="img/go.png" alt="go">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="repairItem">
+              <span>Ремонт планшетов</span>
+              <img src="img/go.png" alt="go">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="repairItem">
+              <span>Ремонт ПК</span>
+              <img src="img/go.png" alt="go">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="repairItem">
+              <span>Ремонт мониторов</span>
+              <img src="img/go.png" alt="go">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="repairItem">
+              <span>Ремонт макбуков</span>
+              <img src="img/go.png" alt="go">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="repairItem">
+              <span>Ремонт клавиатур</span>
+              <img src="img/go.png" alt="go">
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+      </div>
+
+      <span class="priceText"> ЦЕНЫ НА УСЛУГИ </span>
+
+      <div class="priceContainer">
+        <div class="priceItem priceHeader">
+          <span> Ремонтные услуги </span>
+
+          <span> Цена </span>
+
+          <span> Срок </span>
+
+          <a href="">
+            <img src="" alt="" />
+          </a>
+        </div>
+
+        <div class="priceItem">
+          <span> Диагностика </span>
+
+          <span> Бесплатно </span>
+
+          <span> 30 мин </span>
+
+          <a href="">
+            <img src="img/order.png" alt="order" />
+          </a>
+        </div>
+        <div class="priceItem">
+          <span> Замена дисплея </span>
+
+          <span> 1 000 ₽ </span>
+
+          <span> 30-120 мин </span>
+
+          <a href="">
+            <img src="img/order.png" alt="order" />
+          </a>
+        </div>
+        <div class="priceItem">
+          <span> Замена полифонического динамика </span>
+
+          <span> 1 000 ₽ </span>
+
+          <span> 30-120 мин </span>
+
+          <a href="">
+            <img src="img/order.png" alt="order" />
+          </a>
+        </div>
+        <div class="priceItem">
+          <span> Тестирование с выдачей технического заключения </span>
+
+          <span> 1 000 ₽ </span>
+
+          <span> 30-120 мин </span>
+
+          <a href="">
+            <img src="img/order.png" alt="order" />
+          </a>
+        </div>
+        <div class="priceItem">
+          <span> Замена программного обеспечения </span>
+
+          <span> 1 000 ₽ </span>
+
+          <span> 30-120 мин </span>
+
+          <a href="">
+            <img src="img/order.png" alt="order" />
+          </a>
+        </div>
+      </div>
     </main>
 
     <div class="footerText">
-      Все цены указаны с учетом НДС. Стоимость ремонта указана
-      на единичную услугу. Для получения коммерческого
-      предложения на постоянное обслуживания, оставьте заявку.
+      Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную
+      услугу. Для получения коммерческого предложения на постоянное
+      обслуживания, оставьте заявку.
     </div>
 
     <div class="footerText2">
       <p>Получить коммерческое предложение</p>
-      <img src="img/more.png" alt="more">
+      <img src="img/more.png" alt="more" />
     </div>
 
     <footer>
-
       <div class="footerText3">
         <span>© 2019 CPS</span>
         <span>Разработано командой Apesong</span>
@@ -411,7 +458,8 @@
         <span>данной странице, не является</span>
         <span>публичной офертой</span>
       </div>
-
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </body>
 </html>

@@ -2,32 +2,77 @@ import '../scss/style.scss'
 
 console.log('It works!')
 
+/* ---------- БРЕНДЫ ---------- */
+
 const button = document.querySelector('.showMore')
 const brands = document.querySelector('.brandContainer')
 const text = document.querySelector('.buttonText')
 
-button.addEventListener('click', () => {
-  brands.classList.toggle('active')
+if (button && brands && text) {
+  button.addEventListener('click', () => {
+    brands.classList.toggle('active')
 
-  if (brands.classList.contains('active')) {
-    text.textContent = 'Скрыть'
-  } else {
-    text.textContent = 'Показать все'
+    if (brands.classList.contains('active')) {
+      text.textContent = 'Скрыть'
+    } else {
+      text.textContent = 'Показать все'
+    }
+  })
+}
+
+
+/* ---------- РЕМОНТ ---------- */
+
+const repairButton = document.querySelector('.showMoreRepair')
+const repairContainer = document.querySelector('.repairContainer')
+const repairText = document.querySelector('.repairButtonText')
+
+if (repairButton && repairContainer && repairText) {
+  repairButton.addEventListener('click', () => {
+    repairContainer.classList.toggle('active')
+
+    if (repairContainer.classList.contains('active')) {
+      repairText.textContent = 'Скрыть'
+    } else {
+      repairText.textContent = 'Показать все'
+    }
+  })
+}
+
+
+/* ---------- SWIPER БРЕНДЫ ---------- */
+
+const swiper = new Swiper(".mySwiper", {
+  slidesPerView: "auto",
+  spaceBetween: 16,
+
+  pagination: {
+    el: ".mySwiper .swiper-pagination",
+    clickable: true,
+  },
+
+  breakpoints: {
+    768: {
+      enabled: false
+    }
   }
 })
 
-const repairButton = document.querySelector(".showMoreRepair");
-const repairContainer = document.querySelector(".repairContainer");
-const repairText = document.querySelector(".repairButtonText");
 
-repairButton.addEventListener("click", () => {
+/* ---------- SWIPER РЕМОНТ ---------- */
 
-  repairContainer.classList.toggle("active");
+const repairSwiper = new Swiper(".repairSwiper", {
+  slidesPerView: "auto",
+  spaceBetween: 16,
 
-  if(repairContainer.classList.contains("active")){
-    repairText.textContent = "Скрыть";
-  } else {
-    repairText.textContent = "Показать все";
+  pagination: {
+    el: ".repairSwiper .swiper-pagination",
+    clickable: true
+  },
+
+  breakpoints: {
+    768: {
+      enabled: false
+    }
   }
-
-});
+})
