@@ -1,16 +1,13 @@
 /* =====================================================
-   ШРИФТЫ И БАЗОВЫЕ НАСТРОЙКИ
+   BASE / FONTS / RESET
 ===================================================== */
-
 @font-face {
   font-family: 'TTLakes';
   src: url('../fonts/TTLakes/TTLakes-Regular.woff');
 }
-
 * {
   box-sizing: border-box;
 }
-
 body {
   font-family: 'TTLakes', sans-serif;
   box-sizing: border-box;
@@ -18,7 +15,9 @@ body {
   padding: 0;
   background-color: #f8f8f8;
 }
-
+/* =====================================================
+   SIDEBAR (БОКОВОЕ МЕНЮ)
+===================================================== */
 .sidebar {
   display: none;
   height: 100vh;
@@ -30,38 +29,32 @@ body {
   transition: left 0.3s ease;
   z-index: 1000;
 }
-
 .sidebar.active {
   display: block;
   left: 0;
 }
-
 .sidebarHeader {
   display: flex;
   justify-content: left;
   align-items: center;
   gap: 16px;
-  margin-top: 16px;
+  margin-top: 24px;
   margin-left: 16px;
   margin-right: 16px;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
-
 .sidebarLeft {
   padding-left: 70px;
 }
-
 .sidebarNav {
   display: grid;
   padding-top: 24px;
   gap: 30px;
 }
-
 .sidebarText {
   position: relative;
   padding-left: 16px;
 }
-
 .sidebarText::before {
   content: "";
   position: absolute;
@@ -73,51 +66,56 @@ body {
   border-radius: 0px 8px 8px 0px;
   opacity: 0;
 }
-
 .sidebarText::before {
   opacity: 1;
 }
-
 .sidebarText:hover {
   color: #7e7e82;
 }
-
 a {
   text-decoration: none;
 }
-
 .sidebarFooter {
   display: grid;
   gap: 24px;
   margin-top: auto;
   padding: 16px;
 }
-
 .sidebarIcons {
   display: flex;
   gap: 16px;
 }
-
 .sidebarLang {
   display: flex;
   gap: 10px;
 }
-
-.en:hover {
-  color: #7e7e82;
-}
-
-.ru:hover {
-  color: #7e7e82;
-}
-
+.en:hover,
+.ru:hover,
 .ch:hover {
   color: #7e7e82;
 }
 /* =====================================================
-   HEADER
+   OVERLAY (ЗАТЕМНЕНИЕ ФОНА)
 ===================================================== */
-
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 900;
+}
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+/* =====================================================
+   HEADER (ШАПКА САЙТА)
+===================================================== */
 header {
   display: flex;
   align-items: center;
@@ -126,143 +124,108 @@ header {
   background-color: #ffffff;
   border-bottom: 1px solid #d9fff5;
 }
-
 .containerLeft {
   display: flex;
   gap: 16px;
   padding: 10px;
   border-right: 4px solid #eaeaea;
 }
-
 .containerLeft2 {
   display: flex;
   gap: 16px;
   margin-right: auto;
 }
-
 .containerRight {
   display: none;
   gap: 16px;
 }
-
 .containerRight2 {
   display: flex;
   gap: 16px;
   padding: 10px;
 }
-
 /* =====================================================
-   MAIN SECTION
+   MAIN LAYOUT (ОСНОВНОЙ КОНТЕНТ)
 ===================================================== */
-
 .main {
   background-color: #f8f8f8;
   min-height: 100vh;
 }
-
 /* =====================================================
-   ЗАГОЛОВОК СЕКЦИИ УСЛУГ
+   SERVICE HEADER (ЗАГОЛОВОК СЕКЦИИ)
 ===================================================== */
-
 .service {
   display: flex;
   align-items: center;
   position: relative;
-
   color: #1b1c21;
-
   margin-top: 24px;
 }
-
 .service::before {
   content: '';
   position: absolute;
-
   left: 0;
   top: 12px;
   bottom: 12px;
   width: 4px;
-
   background-color: #41f6d7;
 }
-
 .serviceText {
   font-size: 28px;
   font-weight: 700;
   line-height: 40px;
-
   margin-right: auto;
   padding-left: 20px;
 }
-
 .serviceItem {
   display: none;
   margin-left: auto;
-
   gap: 32px;
 }
-
 .serviceItem1 {
   display: flex;
   align-items: center;
-
   gap: 8px;
 }
-
 .service1,
 .service2 {
   display: none;
-
   align-items: center;
   gap: 8px;
 }
-
 .service2 {
   padding-left: 32px;
 }
-
 /* =====================================================
-   НАВИГАЦИЯ
+   NAVIGATION (ГОРИЗОНТАЛЬНОЕ МЕНЮ)
 ===================================================== */
-
 nav {
   display: flex;
   align-items: center;
   gap: 24px;
-
   overflow-x: auto;
   white-space: nowrap;
-
   padding: 16px;
   padding-left: 24px;
 }
-
 .navText {
   padding: 1px 16px;
-
   border: 2px solid transparent;
   border-radius: 6px;
-
   transition: 0.2s ease;
-
   cursor: pointer;
-
   color: #7e7e82;
 }
-
 .navText p {
   margin: 4px;
 }
-
 .navText:hover {
   border: 2px solid #b8ffec;
   background-color: #ffffff;
 }
-
 /* =====================================================
-   ИНФОРМАЦИОННЫЙ БЛОК
+   INFO BLOCK (ТЕКСТ + КАРТИНКА)
 ===================================================== */
-
 .info {
   display: flex;
   flex-direction: column;
@@ -270,96 +233,74 @@ nav {
   padding: 16px;
   margin: 34px;
 }
-
 .infoText {
   font-size: 14px;
   line-height: 1.4;
   color: #1b1c21;
 }
-
 .moreText {
   display: none;
 }
-
 .readMore {
   display: flex;
   align-items: center;
-
   background: none;
   border: none;
-
   cursor: pointer;
 }
-
 .infoBanner img{
   max-width: 530px;
   max-height: 307px;
   width: 100%;
   height: auto;
 }
-
 /* =====================================================
    SWIPER (МОБИЛЬНЫЕ КАРТОЧКИ)
 ===================================================== */
-
 .mySwiper {
   margin: 32px;
   padding-bottom: 50px;
 }
-
 .repairSwiper {
   margin: 32px;
   padding-bottom: 50px;
 }
-
 .swiper-slide {
   width: 240px;
 }
-
 .swiper-pagination {
   bottom: 0 !important;
 }
-
 .logoContainer {
   width: 240px;
   height: 72px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 16px;
-
   border: 1px solid #eaeaea;
   border-radius: 6px;
 }
-
 .swiperText {
   margin: 32px;
 }
-
 /* =====================================================
-   БЛОК БРЕНДОВ (GRID ДЛЯ ДЕСКТОПА)
+   BRANDS GRID (БРЕНДЫ - DESKTOP)
 ===================================================== */
-
 .brandText {
   margin: 32px;
+  color: #7e7e82;
 }
-
 .brandContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-
   margin-left: 24px;
   margin-right: 24px;
-
   max-height: 180px;
   overflow: hidden;
-
   transition: 0.3s;
 }
-
 .brand {
   display: flex;
   align-items: center;
@@ -371,185 +312,141 @@ nav {
   border: 1px solid #eaeaea;
   border-radius: 6px;
 }
-
 /* =====================================================
-   КНОПКА "ПОКАЗАТЬ ВСЕ"
+   SHOW MORE BUTTON (КНОПКА РАСКРЫТИЯ)
 ===================================================== */
-
 .showMore {
   display: flex;
   align-items: center;
-
   gap: 8px;
-
   margin-top: 24px;
   margin-left: 32px;
-
   background: none;
   border: none;
-
   cursor: pointer;
-
   transition: 0.3s;
 }
-
 .brandContainer.active {
   max-height: 1000px;
 }
-
 .brandContainer.active + .showMore img {
   transform: rotate(180deg);
 }
-
 /* =====================================================
-   БЛОК РЕМОНТА
+   REPAIR SECTION (УСЛУГИ РЕМОНТА)
 ===================================================== */
-
 .repairText {
-  margin-left: 24px;
+  margin-left: 32px;
+  color: #7e7e82;
 }
-
 .repairContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-
   margin-left: 24px;
   margin-right: 24px;
-
   margin-top: 24px;
-
   max-height: 160px;
   overflow: hidden;
 }
-
 .repairItem {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   width: 240px;
   height: 160px;
-
   padding: 16px;
-
   background: #fff;
   border: 1px solid #eaeaea;
   border-radius: 6px;
-
   box-sizing: border-box;
 }
-
 .repairItem img {
   align-self: flex-end;
 }
-
 .showMoreRepair {
   display: flex;
   align-items: center;
-
   gap: 8px;
-
   margin-top: 24px;
   margin-left: 32px;
-
   background: none;
   border: none;
-
   cursor: pointer;
 }
-
 .repairContainer.active {
   max-height: 1000px;
 }
-
 .repairContainer.active + .showMoreRepair img {
   transform: rotate(180deg);
 }
-
 /* =====================================================
-   ЦЕНЫ
+   PRICING (ТАБЛИЦА ЦЕН)
 ===================================================== */
-
 .priceText {
   margin-left: 32px;
-
   display: block;
   margin-top: 40px;
-
   font-size: 16px;
   font-weight: 600;
-
   text-transform: uppercase;
+  color: #1B1C21;
 }
-
 .priceContainer {
   margin: 32px;
   margin-top: 24px;
-
   border-radius: 8px;
   overflow: hidden;
+  background-color: white;
 }
-
 .priceItem {
   display: grid;
   grid-template-columns: 4fr 1fr 1fr 150px;
   align-items: center;
-
   padding: 16px 24px;
-
   border-bottom: 1px solid #eaeaea;
 }
-
 .priceHeader {
   background: #f8f8f8;
   font-weight: 600;
+  color: #7e7e82;
 }
-
 .priceItem a {
   justify-self: end;
 }
-
 /* =====================================================
-   FOOTER
+   FOOTER (ПОДВАЛ)
 ===================================================== */
-
 .footerText {
   margin: 24px;
   max-width: 420px;
   font-size: 14px;
   height: 60px;
+  color: #1B1C21;
 }
-
 .footerText2 {
   display: flex;
   align-items: center;
   max-width: 1120px;
   margin: 24px;
 }
-
 footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: start;
-
   margin: 80px 24px 24px 24px;
 }
-
 .footerText3 {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-
 .footerText4 {
   text-align: center;
 }
-
 .footerText5 {
   text-align: right;
 }
-
 .footerText3 span,
 .footerText4 span,
 .footerText5 span {
@@ -558,9 +455,8 @@ footer {
   color: #7e7e82;
   line-height: 1.4;
 }
-
 /* =====================================================
-   АДАПТИВ
+   RESPONSIVE (АДАПТИВ)
 ===================================================== */
 @media (min-width:340px) {
   .brandContainer {
@@ -655,6 +551,7 @@ footer {
     height: auto;
   }
 
+
   .sidebar.active {
     left: 0;
   }
@@ -677,6 +574,9 @@ footer {
 
   .brandContainer {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .sidebarHide {
+    display: none;
   }
 }
 @media (min-width: 1440px) {

@@ -2,13 +2,30 @@ import '../scss/style.scss'
 
 console.log('It works!')
 
+/* =====================================================
+   SIDEBAR (БУРГЕР-МЕНЮ)
+===================================================== */
+
 const burger = document.getElementById('burger')
 const sidebar = document.getElementById('sidebar')
+const overlay = document.querySelector('.overlay')
+
 burger.addEventListener('click', () => {
-sidebar.classList.toggle('active')
+  sidebar.classList.toggle('active')
+  overlay.classList.toggle('active')
+  document.body.style.overflow = 'hidden'
 })
 
-/* ---------- БРЕНДЫ ---------- */
+overlay.addEventListener('click', () => {
+  sidebar.classList.remove('active')
+  overlay.classList.remove('active')
+  document.body.style.overflow = ''
+})
+
+
+/* =====================================================
+   BRANDS (БРЕНДЫ)
+===================================================== */
 
 const button = document.querySelector('.showMore')
 const brands = document.querySelector('.brandContainer')
@@ -27,7 +44,9 @@ if (button && brands && text) {
 }
 
 
-/* ---------- РЕМОНТ ---------- */
+/* =====================================================
+   REPAIR (РЕМОНТ)
+===================================================== */
 
 const repairButton = document.querySelector('.showMoreRepair')
 const repairContainer = document.querySelector('.repairContainer')
@@ -46,39 +65,43 @@ if (repairButton && repairContainer && repairText) {
 }
 
 
-/* ---------- SWIPER БРЕНДЫ ---------- */
+/* =====================================================
+   SWIPER (БРЕНДЫ)
+===================================================== */
 
-const swiper = new Swiper(".mySwiper", {
-  slidesPerView: "auto",
+const swiper = new Swiper('.mySwiper', {
+  slidesPerView: 'auto',
   spaceBetween: 16,
 
   pagination: {
-    el: ".mySwiper .swiper-pagination",
+    el: '.mySwiper .swiper-pagination',
     clickable: true,
   },
 
   breakpoints: {
     768: {
-      enabled: false
-    }
-  }
+      enabled: false,
+    },
+  },
 })
 
 
-/* ---------- SWIPER РЕМОНТ ---------- */
+/* =====================================================
+   SWIPER (РЕМОНТ)
+===================================================== */
 
-const repairSwiper = new Swiper(".repairSwiper", {
-  slidesPerView: "auto",
+const repairSwiper = new Swiper('.repairSwiper', {
+  slidesPerView: 'auto',
   spaceBetween: 16,
 
   pagination: {
-    el: ".repairSwiper .swiper-pagination",
-    clickable: true
+    el: '.repairSwiper .swiper-pagination',
+    clickable: true,
   },
 
   breakpoints: {
     768: {
-      enabled: false
-    }
-  }
+      enabled: false,
+    },
+  },
 })
