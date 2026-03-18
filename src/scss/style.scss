@@ -7,16 +7,113 @@
   src: url('../fonts/TTLakes/TTLakes-Regular.woff');
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'TTLakes', sans-serif;
-
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
-  background-color: white;
+  background-color: #f8f8f8;
 }
 
+.sidebar {
+  display: none;
+  height: 100vh;
+  width: 320px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  display: block;
+  left: 0;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 30px;
+}
+
+.sidebarLeft {
+  padding-left: 70px;
+}
+
+.sidebarNav {
+  display: grid;
+  padding-top: 24px;
+  gap: 30px;
+}
+
+.sidebarText {
+  position: relative;
+  padding-left: 16px;
+}
+
+.sidebarText::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #41f6d7;
+  border-radius: 0px 8px 8px 0px;
+  opacity: 0;
+}
+
+.sidebarText::before {
+  opacity: 1;
+}
+
+.sidebarText:hover {
+  color: #7e7e82;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sidebarFooter {
+  display: grid;
+  gap: 24px;
+  margin-top: auto;
+  padding: 16px;
+}
+
+.sidebarIcons {
+  display: flex;
+  gap: 16px;
+}
+
+.sidebarLang {
+  display: flex;
+  gap: 10px;
+}
+
+.en:hover {
+  color: #7e7e82;
+}
+
+.ru:hover {
+  color: #7e7e82;
+}
+
+.ch:hover {
+  color: #7e7e82;
+}
 /* =====================================================
    HEADER
 ===================================================== */
@@ -24,41 +121,34 @@ body {
 header {
   display: flex;
   align-items: center;
-
   gap: 16px;
-  margin: 24px;
-
-  border: 1px solid white;
+  padding: 24px 16px;
   background-color: #ffffff;
+  border-bottom: 1px solid #d9fff5;
 }
 
 .containerLeft {
   display: flex;
   gap: 16px;
   padding: 10px;
-
   border-right: 4px solid #eaeaea;
 }
 
 .containerLeft2 {
   display: flex;
   gap: 16px;
-
   margin-right: auto;
 }
 
 .containerRight {
-  display: flex;
+  display: none;
   gap: 16px;
 }
 
 .containerRight2 {
   display: flex;
   gap: 16px;
-
   padding: 10px;
-
-  border-left: 4px solid #eaeaea;
 }
 
 /* =====================================================
@@ -81,7 +171,7 @@ header {
 
   color: #1b1c21;
 
-  padding-left: 24px;
+  margin-top: 24px;
 }
 
 .service::before {
@@ -147,8 +237,6 @@ nav {
   padding-left: 24px;
 }
 
-
-
 .navText {
   padding: 1px 16px;
 
@@ -177,18 +265,16 @@ nav {
 
 .info {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-
-  padding: 32px;
-  margin: 0;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  margin: 34px;
 }
 
 .infoText {
-  flex: 1;
-
   font-size: 14px;
   line-height: 1.4;
+  color: #1b1c21;
 }
 
 .moreText {
@@ -205,13 +291,11 @@ nav {
   cursor: pointer;
 }
 
-.infoBanner {
-  flex: 1;
+.infoBanner img{
+  max-width: 530px;
+  max-height: 307px;
   width: 100%;
-
-  display: block;
-
-  margin-right: auto;
+  height: auto;
 }
 
 /* =====================================================
@@ -219,17 +303,17 @@ nav {
 ===================================================== */
 
 .mySwiper {
-  margin: 24px;
+  margin: 32px;
   padding-bottom: 50px;
 }
 
 .repairSwiper {
-  margin: 24px;
+  margin: 32px;
   padding-bottom: 50px;
 }
 
 .swiper-slide {
-  width: 224px;
+  width: 240px;
 }
 
 .swiper-pagination {
@@ -237,7 +321,7 @@ nav {
 }
 
 .logoContainer {
-  width: 224px;
+  width: 240px;
   height: 72px;
 
   display: flex;
@@ -250,12 +334,16 @@ nav {
   border-radius: 6px;
 }
 
+.swiperText {
+  margin: 32px;
+}
+
 /* =====================================================
    БЛОК БРЕНДОВ (GRID ДЛЯ ДЕСКТОПА)
 ===================================================== */
 
 .brandText {
-  margin: 24px;
+  margin: 32px;
 }
 
 .brandContainer {
@@ -276,13 +364,9 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  width: 224px;
+  width: 240px;
   height: 72px;
-
-  padding-left: 10px;
-  padding-right: 16px;
-
+  padding: 20px 16px;
   background: white;
   border: 1px solid #eaeaea;
   border-radius: 6px;
@@ -432,44 +516,101 @@ nav {
 
 .footerText {
   margin: 24px;
-
+  max-width: 420px;
   font-size: 14px;
-  height: 20px;
+  height: 60px;
 }
 
 .footerText2 {
   display: flex;
   align-items: center;
-
+  max-width: 1120px;
   margin: 24px;
 }
 
 footer {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: start;
 
   margin: 80px 24px 24px 24px;
+}
+
+.footerText3 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footerText4 {
+  text-align: center;
+}
+
+.footerText5 {
+  text-align: right;
+}
+
+.footerText3 span,
+.footerText4 span,
+.footerText5 span {
+  display: block;
+  font-size: 14px;
+  color: #7e7e82;
+  line-height: 1.4;
 }
 
 /* =====================================================
    АДАПТИВ
 ===================================================== */
-
-@media (max-width: 768px) {
+@media (min-width:340px) {
   .brandContainer {
     display: none;
   }
-
   .repairContainer {
     display: none;
   }
-  .showMore,
+  .showMore {
+    display: none;
+  }
   .showMoreRepair {
     display: none;
   }
+  .brandText {
+    display: none;
+  }
+  .repairText {
+    display: none;
+  }
 }
-
 @media (min-width: 768px) {
+
+  .info {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .infoText {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .infoBanner {
+    flex: 1;
+  }
+
+  .containerRight {
+    display: flex;
+    gap: 16px;
+  }
+
+  .containerRight2 {
+    display: flex;
+    gap: 16px;
+    padding: 10px;
+    border-left: 4px solid #eaeaea;
+  }
+
   .mySwiper {
     display: none;
   }
@@ -478,18 +619,65 @@ footer {
     display: none;
   }
 
-  .repairContainer {
-  }
-}
-
-@media (min-width: 1120px) {
-  .repairContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  .swiperText {
+    display: none;
   }
 
   .brandContainer {
     display: grid;
+  }
+  .repairContainer {
+    display: grid;
+  }
+  .showMore {
+    display: flex;
+  }
+  .showMoreRepair {
+    display: flex;
+  }
+  .brandText {
+    display: flex;
+  }
+  .repairText {
+    display: flex;
+  }
+}
+
+@media (min-width: 1120px) {
+
+  body {
+    display: flex;
+  }
+  .sidebar {
+    display: block;
+    position: static;
+    width: 320px;
+    height: auto;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+  .bigContainer {
+    width: 100%;
+  }
+  .containerLeft {
+    display: none;
+  }
+  header {
+    display: none;
+  }
+
+  .serviceItem {
+    display: flex;
+  }
+  .repairContainer {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .brandContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1440px) {
 }
