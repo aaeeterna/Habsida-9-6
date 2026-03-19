@@ -1,5 +1,7 @@
 # Lesson 8.5. Task: How to Start
 
+link : https://aaeeterna.github.io/Habsida-9-6/
+
 To get started, clone the repository `https://github.com/Habsida-Projects/webpack-static-template`(`git clone https://github.com/Habsida-Projects/webpack-static-template.git`).
 
 The repository already has:
