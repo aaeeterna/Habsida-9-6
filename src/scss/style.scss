@@ -180,6 +180,7 @@ header {
 .serviceItem {
   display: none;
   margin-left: auto;
+  padding-right: 32px;
   gap: 32px;
 }
 .serviceItem1 {
@@ -402,7 +403,7 @@ nav {
 }
 .priceItem {
   display: grid;
-  grid-template-columns: 4fr 1fr 1fr 150px;
+  grid-template-columns: minmax(80px, 4fr) minmax(80px, 1fr) minmax(80px, 1fr) auto;
   align-items: center;
   padding: 16px 24px;
   border-bottom: 1px solid #eaeaea;
@@ -414,6 +415,9 @@ nav {
 }
 .priceItem a {
   justify-self: end;
+}
+.priceItem span {
+  word-break: break-word;
 }
 /* =====================================================
    FOOTER (ПОДВАЛ)
