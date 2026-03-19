@@ -55,7 +55,7 @@ body {
   position: relative;
   padding-left: 16px;
 }
-.sidebarText::before {
+.border::before {
   content: "";
   position: absolute;
   top: 0;
@@ -267,6 +267,7 @@ nav {
 }
 .swiper-slide {
   width: 240px;
+  background-color: #ffffff;
 }
 .swiper-pagination {
   bottom: 0 !important;
@@ -537,10 +538,20 @@ footer {
   .repairText {
     display: flex;
   }
+  .brandContainer {
+    max-width: 768px;
+  }
+  .repairContainer {
+    max-width: 768px;
+  }
 }
 
 @media (min-width: 1120px) {
-
+}
+@media (min-width: 1440px) {
+  .overlay {
+    display: none;
+  }
   body {
     display: flex;
   }
@@ -578,6 +589,9 @@ footer {
   .sidebarHide {
     display: none;
   }
-}
-@media (min-width: 1440px) {
+
+  .brandContainer,
+  .repairContainer {
+    max-width: 1120px;
+  }
 }
